@@ -57,8 +57,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
+    title: Muhammad Rafay Nadeem
+    subtitle: "Software Engineer | Causal Inference Enthusiast"
     imageUrl: "profile-pic-linkedin.jpg"
     imageWidth: 120
     imageHeight: 120
