@@ -117,3 +117,18 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - '\['
+            - '\]'
+          - - $$
+            - $$
+          inline:
+          - - '\('
+            - '\)'
+          - - $
+            - $
+        enable: true
