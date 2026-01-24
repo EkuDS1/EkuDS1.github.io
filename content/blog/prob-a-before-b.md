@@ -1,6 +1,6 @@
 ---
 title: "What's the probability that A happens before B?"
-date: 2020-09-15T11:30:03+00:00
+date: 2024-11-12T18:26:31+00:00
 math: true
 tags: ["probability"]
 showToc: true
@@ -25,7 +25,7 @@ Most aspects of conditional probability seem simple enough. You assume that an e
 The formula $P(A|B)=\dfrac{P(A\cap B)}{P(B)}$ is also relatively easy to understand by itself. It makes sense how it applies to the example above and to examples involving things like contingency tables.
 
 ## Problem
-But what about the probability of an event $A$ occurring before an event $B$? Assuming that we interpret this to mean an event $A$ happening exactly once before an event $B$ happens exactly once, the probability is supposedly $P(A|A\cup B)=\dfrac{P(A)}{P(A\cup B)}$. *From Hogg and Tanis' Probability and Statistical Inference, Example 1.3-4, Chapter 1.3 Conditional Probability*
+But what about the probability of an event $A$ occurring before an event $B$? Assuming that we interpret this to mean an event $A$ happening exactly once before an event $B$ happens exactly once, the probability is supposedly $P(A|A\cup B)=\dfrac{P(A)}{P(A\cup B)}$.
 
 Let's break this down.
 ## An Attempt at a Solution
@@ -53,3 +53,9 @@ We can apply similar to logic to the cases where $A$ doesn't happen on the first
 It's weird how despite the fact that I got a closed form solution, I don't really get how this formula directly connects with the concept of $A$ coming first. I can think of an intuitive explanation(that the only events of interest are $A$ and $B$ so we condition on that) but that explanation isn't all that satisfying. It makes me think that our solution above is expressing information about multiple trials using information about just one trial. And I find that strange.
 
 I think I know in which situation I would use such a probability but I'm not sure if I would call that "understanding".
+
+## References
+
+I originally started thinking about this problem after a passing remark in *Hogg, Tanis and Zimmerman's Probability and Statistical Inference, Chapter 1.3 Conditional Probability, Example 1.3-4*, talking about the probability of getting a sum of 3 before getting a sum of 5 when a pair of fair four-sided dice is rolled.
+
+I got the closed form solution thanks to [this answer](https://math.stackexchange.com/a/1490311/1524844) by [André Nicolas](https://math.stackexchange.com/users/6312/andr%c3%a9-nicolas) on StackExchange.
