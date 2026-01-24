@@ -1,5 +1,5 @@
-baseURL: "https://examplesite.com/"
-title: ExampleSite
+baseURL: ""
+title: Muhammad Rafay Nadeem
 pagination.pagerSize: 5
 theme: PaperMod
 
@@ -14,8 +14,8 @@ minify:
 
 params:
   # env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
-  description: "ExampleSite description"
+  title: Muhammad Rafay Nadeem
+  description: "Rafay's Blog"
   keywords: [Blog, Portfolio, PaperMod]
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -103,10 +103,6 @@ menu:
       name: Blog
       url: /blog/
       weight: 2
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
