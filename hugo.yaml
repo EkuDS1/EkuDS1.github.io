@@ -57,14 +57,14 @@ params:
     title: Muhammad Rafay Nadeem
     subtitle: "Software Engineer | Causal Inference Enthusiast"
     imageUrl: "profile-pic-linkedin.jpg"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 130
+    imageHeight: 130
     imageTitle: my image
     buttons:
+      - name: About Me
+        url: about
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
 
   # home-info mode
   homeInfoParams:
@@ -72,10 +72,10 @@ params:
     Content: Welcome to my blog
 
   socialIcons:
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/muhammad-rafay-nadeem-0726a7208"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/EkuDS1"
 
   cover:
     hidden: true # hide everywhere but not in structured data
