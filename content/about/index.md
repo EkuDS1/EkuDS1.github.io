@@ -12,7 +12,7 @@ I'm a Software Engineer whose hobbies include video games and learning languages
 
 I'm highly interested in the use of Causal Inference for better decision making.
 
-Currently a software engineer at APIMatic, using ***.NET***, ***TypeScript*** and ***Azure***. I've also been fortunate to get my hands dirty with Python, Ruby, Go and Java.
+Currently a software engineer at [APIMatic](https://www.apimatic.io/), using ***.NET***, ***TypeScript*** and ***Azure***. I've also been fortunate enough to get my hands dirty with Python, Ruby, Go and Java.
 
 ## Portfolio
 
