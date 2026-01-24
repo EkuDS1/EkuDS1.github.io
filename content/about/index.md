@@ -8,7 +8,7 @@ hidemeta: false
 
 # Hi!
 
-I'm a Software Engineer whose hobbies include video games and learning languages like Japanese and Arabic. I'm known to be very tenacious in learning and understanding new knowledge. I am also very methodical and prefer well documented, readable and maintainable code as a rule.
+I'm a Software Engineer whose hobbies include video games and learning languages like Japanese and Arabic.
 
 I'm highly interested in the use of Causal Inference for better decision making.
 
