@@ -8,20 +8,11 @@ hidemeta: false
 
 # Hi!
 
-I'm a Software Developer and final year Computer Science student whose hobbies include video games, reading and learning languages like Japanese, Arabic and Urdu. I'm known to be very tenacious in learning and understanding new knowledge. I am also very methodical and prefer well documented, readable and maintainable code as a rule.
+I'm a Software Engineer whose hobbies include video games and learning languages like Japanese and Arabic. I'm known to be very tenacious in learning and understanding new knowledge. I am also very methodical and prefer well documented, readable and maintainable code as a rule.
 
-As a Pakistani, I hope to use the power of data to aid the education sector of my country. Currently I am working on using NLP and Deep Learning to geolocate Twitter Users based on their tweets.
+I'm highly interested in the use of Causal Inference for better decision making.
 
-## Skills
-
-Here are some of the skills I've learned over the past 5 years:
-
-- **Python**
-- **Deep Learning and NLP**
-- **Java**
-- **MS Word, Excel and Powerpoint**
-- **C, C++**
-- **Adobe Photoshop and Illustrator**
+Currently a software engineer at APIMatic, using ***.NET***, ***TypeScript*** and ***Azure***. I've also been fortunate to get my hands dirty with Python, Ruby, Go and Java.
 
 ## Portfolio
 
@@ -33,7 +24,7 @@ A selection of the projects I've worked on:
 
 [GitHub Repository](https://github.com/faraz455/Search-Engine-Project)
 
-Have you ever wanted to find a movie but you didn't know the exact name? Well this search engine can find the most relevant movies for you, all based on Google's original research paper. Written in Java.
+A search engine based on Google's seminal research paper, *"The Anatomy of a Large-Scale Hypertextual Web Search Engine"*. Written in Java.
 
 ### CHIP-8 Emulator
 
