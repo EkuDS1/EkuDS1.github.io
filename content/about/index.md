@@ -18,6 +18,14 @@ Currently a software engineer at [APIMatic](https://www.apimatic.io/), using ***
 
 A selection of the projects I've worked on:
 
+### CHIP-8 Emulator/Interpreter
+
+![CHIP-8 Invaders](invaders.gif)
+
+[GitHub Repository](https://github.com/EkuDS1/CHIP-8-Emulator)
+
+A program that can run any program written in the CHIP-8 programming language with 8-bit graphics using OpenGL! A large variety of games and demos are available in the github repository. Written in Java.
+
 ### IMDb Movie Search Engine
 
 ![IMDb Search Demo](search-demo.gif)
@@ -25,14 +33,6 @@ A selection of the projects I've worked on:
 [GitHub Repository](https://github.com/faraz455/Search-Engine-Project)
 
 A search engine based on Google's seminal research paper, *"The Anatomy of a Large-Scale Hypertextual Web Search Engine"*. Written in Java.
-
-### CHIP-8 Emulator
-
-![CHIP-8 Invaders](invaders.gif)
-
-[GitHub Repository](https://github.com/EkuDS1/CHIP-8-Emulator)
-
-A program that can run any program written in the CHIP-8 programming language with 8-bit graphics using OpenGL! A large variety of games and demos are available in the github repository. Written in Java.
 
 ### pyfs - A Python File System/File Server
 
