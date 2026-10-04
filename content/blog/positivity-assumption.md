@@ -135,7 +135,7 @@ Still, there is one glaring issue. The data records data for a single patient pe
 
 ## The Positivity Assumption
 
-The positivity assumption states that $P(T=t,X=x)>0$ for all treatments $t$ and covariates $x$. This assumption is violated because there are cases with 0 probability. For example, the probability of all the "Involved" columns being 1 is 0.
+The positivity assumption states that for all covariate values $x$ where $P(X=x)>0$, $0<P(T=t|X=x)<1$ for all treatments $t$. This assumption may be violated because there are subpopulations where bikes were never involved. For example, the probability of all the "Involved" columns being being 1 is 0.
 
 ### `Involved` columns
 Would it be solved if we transformed the data such that only `BikesInvolved` and `OthersInvolved` were left? In this case, we would combine the remaining "Involved" columns into the `OthersInvolved` column in order to not lose data. An easy way to do this would be to make a new column `NonBikesInvolved` and define it as the sum of all the other "Involved" columns other than `BikesInvolved`.
