@@ -21,21 +21,24 @@ UseHugoToc: true
 
 Claims about cause and effect cannot be made without certain assumptions. For an informative walkthrough of what kinds of assumptions need to be made for causal inference, you can see [this lecture by Brady Neal](https://youtu.be/5x_pPemAVxs?si=CTQYYYERhhG3CJXU).
 
-In this article, I'll be going through an example containing positivity assumption violations and what to do about them. First, we'll go over the causal question and data cleanup. Then we'll address our causal assumption.
+In this article, I'll be going through an example containing positivity assumption violations and how trying to fix them can lead to tradeoffs. First, we'll go over the causal question and data cleanup. Then we'll address our causal assumption.
 ## Questions about the Question
-Do bikes cause more accidents than cars? I think the answer is yes. But I'm also biased. Can we substantiate the claim that bikes cause more accidents than cars?
+First, some context. When I say "bike", I'm referring to a motorcycle or a motorbike. Bikes are the default mode of transport for Pakistanis due to the them being relatively inexpensive to acquire. Bike riders are also known to be orders of magnitude more at risk of fatal accidents compared to car riders, based on traffic reports from the US[1] and European Union[2] showing that bikes constitute the highest percentage of fatal accidents.
+
+This is all very suggestive but what we want to know is: Do bikes *cause* more fatal accidents than cars? I’m biased to say yes. Can we substantiate the claim?
+
+[1] https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813732.pdf
+[2] https://web.archive.org/web/20200929163414/https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/statistics/dacota/bfs2018_motomoped.pdf. This report includes mopeds but motorcycles still make up a higher share of fatalities.
 
 Let's be more concrete. I'm thinking of my home country Pakistan. So, maybe it would be appropriate to restrict the question to Pakistan only.
 
-We also don't know if vehicle choice affects accidents at all. Maybe road conditions are more to blame than any specific vehicle? How would we figure this out? Also, what do we mean by "affect"? Do we mean a causal effect? If there are multiple causes of an accident, can we estimate the proportions of these causal effects? How do we attribute "blame"? If the proportions are uniform, maybe that means that vehicle choice doesn't matter?
+We also don’t know if vehicle choice affects accidents at all. It's possible that road conditions are more to blame than any specific vehicle. How would we figure this out? If there are multiple causes of an accident, can we estimate the proportions of these causal effects i.e. how do we attribute “blame”? If the proportions are uniform, maybe that means that vehicle choice doesn’t matter?
 
-Maybe socioeconomic status also affects how likely an accident is supposed to occur, due to knowledge of traffic laws. We can use level of education as a proxy for this and limit our data to educated drivers.
+Maybe socioeconomic status also affects how likely a fatal accident is supposed to occur, due to knowledge of traffic laws. Consider this: it's possible that being educated makes you more stressed and prone to collision. Therefore, uneducated people would be less likely to crash. We can use level of education as a proxy for this.
 
-Additionally, we also want to be clear about our causal model i.e. what causes what. Obviously the vehicle you're driving doesn't directly cause an accident just by driving it, but let's assume that it is a direct cause of an accident for simplicity.
+Additionally, we also want to be clear about our causal model i.e. what causes what. Obviously the vehicle you’re driving doesn’t directly cause an accident just by driving it, but let’s assume that it is a direct cause of an accident for simplicity.
 
-Putting this all together, we have two main questions to ask: For a dataset of educated drivers in Pakistan, does vehicle choice have a causal effect on the occurrence of an accident and, if it does, how much does bike ownership contribute to it?
-
-Let's assume that vehicle choice has *some* causal effect on accidents. Now, our question is, **"For a dataset of educated drivers in Pakistan, how much of a causal effect does bike ownership have on accidents?"** As we'll see below, this question may have to change to accommodate limitations in the data.
+Putting this all together, our question is, **"For Pakistanis, how much of a causal effect does bike ownership have on accidents?"** As we’ll see below, this question may have to change to accommodate limitations in the data.
 
 ## The Data
 For the data, I'll use a public dataset available on the Harvard Dataverse, which contains road traffic accident data from 2020-2023 in the city of Rawalpindi.
@@ -97,7 +100,12 @@ $ VansInvolved             <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
 $ OthersInvolved           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
 ```
 
-We have over 45,000 records. I think we can safely ignore the few records that gave us a warning when we loaded the data. From the looks of it, they were 4 records with entry errors. Probably safe to ignore.
+We have over 45,000 records. I think we can safely ignore the few records that gave us a warning when we loaded the data. From the looks of it, they were 4 records with entry errors.
+
+```r
+> prta <- rta |> slice(-problems(.)$row)
+```
+
 ### Tidying Up The Data
 
 First, we have some spring cleaning to do.
@@ -107,11 +115,11 @@ First, we have some spring cleaning to do.
 
 Additionally, some columns are unnecessary for our analysis and should be removed:
 - `EcNumber`: It's unclear what this means but it's probably some sort of identifier. Interestingly, this number is not unique for each row. There are 3,782 `EcNumber` values that have been re-entered.
-	```r
-	> prta |> count(EcNumber) |> filter(n > 1)
-	# A tibble: 3,792 × 2
-	# ...omitted for brevity
-	```
+        ```r
+        > prta |> count(EcNumber) |> filter(n > 1)
+        # A tibble: 3,792 × 2
+        # ...omitted for brevity
+        ```
 - `responsetime`: For this analysis, we don't care about what happened *after* the accident. Only what happened *before*. Response time doesn't help answer our original question.
 - `HospitalName`: Similar to `responsetime`
 - `TotalPatientsInEmergency`: This could have served as a proxy for the severity of the accident, but we already have `InjuryType` and `PatientStatus`
@@ -131,14 +139,24 @@ Removing the extra columns:
 
 What I find really interesting are the "Involved" columns. Looking at the `BikesInvolved` column, we can treat it like a binary treatment variable $T$ where $T=1$ when at least one bike is involved and $T=0$ otherwise. That gets rid of 9 columns.
 
-Still, there is one glaring issue. The data records data for a single patient per row. *We don't know what the patient's own vehicle was.* The only chance we have is to infer it from `Reason` and the `Involved` columns. We can get around this by changing the question: "**For a dataset of educated drivers in Pakistan, how much of a causal effect does *bike involvement* have on accidents?**"
+```r
+> prta <- prta |> mutate(T_bike = as.numeric(BikesInvolved > 0))
+```
+
+Still, there is one glaring issue. The data records data for a single patient per row. *We don't know what the patient's own vehicle was.* The only chance we have is to infer it from `Reason` and the `Involved` columns. We can get around this by changing the question: "**For Pakistanis, how much of a causal effect does *bike involvement* have on fatal accidents as opposed to non-fatal ones?**"
 
 ## The Positivity Assumption
 
-The positivity assumption states that for all covariate values $x$ where $P(X=x)>0$, $0<P(T=t|X=x)<1$ for all treatments $t$. This assumption may be violated because there are subpopulations where bikes were never involved. For example, the probability of all the "Involved" columns being being 1 is 0.
+The positivity assumption states that for all covariate values $x$ where $P(X=x)>0$, $0<P(T=t|X=x)<1$ for all treatments $t$. This assumption may be violated because there are subpopulations where bikes were never involved. For example, there are no records where more than one rickshaw and at least one bike were involved:
+
+```r
+> rta |> filter(RickshawsInvolved > 1 & BikesInvolved > 0) |> select(BikesInvolved)
+# A tibble: 0 × 1
+# ℹ 1 variable: BikesInvolved <dbl>
+```
 
 ### `Involved` columns
-Would it be solved if we transformed the data such that only `BikesInvolved` and `OthersInvolved` were left? In this case, we would combine the remaining "Involved" columns into the `OthersInvolved` column in order to not lose data. An easy way to do this would be to make a new column `NonBikesInvolved` and define it as the sum of all the other "Involved" columns other than `BikesInvolved`.
+Would it be solved if we transformed the data such that only `BikesInvolved` and a column for everyone else involved were left? In this case, we would combine the remaining "Involved" columns into the `OthersInvolved` column in order to not lose data. An easy way to do this would be to make a new column `NonBikesInvolved` and define it as the sum of all the "Involved" columns other than `BikesInvolved`.
 
 ### Positivity and Confounding
 
