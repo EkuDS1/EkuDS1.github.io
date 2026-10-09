@@ -140,7 +140,7 @@ What I find really interesting are the "Involved" columns. Looking at the `Bikes
 > prta <- prta |> mutate(T_bike = as.numeric(BikesInvolved > 0))
 ```
 
-Still, there is one glaring issue. The data records data for a single patient per row. *We don't know what the patient's own vehicle was.* The only chance we have is to infer it from `Reason` and the `Involved` columns. We can get around this by changing the question: "**For Pakistanis, how much of a causal effect does *bike involvement* have on fatal accidents as opposed to non-fatal ones?**"
+Still, there is one glaring issue. The dataset records data for a single patient per row. *We don't know what the patient's own vehicle was.* The only chance we have is to infer it from `Reason` and the `Involved` columns. We can get around this by changing the question: "**For Pakistanis, how much of a causal effect does *bike involvement* have on fatal accidents as opposed to non-fatal ones?**"
 
 ## The Positivity Assumption
 
