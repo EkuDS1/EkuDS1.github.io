@@ -27,9 +27,6 @@ First, some context. When I say "bike", I'm referring to a motorcycle or a motor
 
 This is all very suggestive but what we want to know is: Do bikes *cause* more fatal accidents than cars? I'm biased to say yes. Can we substantiate the claim?
 
-[1] https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813732.pdf
-[2] https://web.archive.org/web/20200929163414/https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/statistics/dacota/bfs2018_motomoped.pdf. This report includes mopeds but motorcycles still make up a higher share of fatalities.
-
 Let's be more concrete. I'm thinking of my home country Pakistan. So, maybe it would be appropriate to restrict the question to Pakistan only.
 
 We also don't know if vehicle choice affects accidents at all. It's possible that road conditions are more to blame than any specific vehicle. How would we figure this out? If there are multiple causes of an accident, can we estimate the proportions of these causal effects i.e. how do we attribute "blame"? If the proportions are uniform, maybe that means that vehicle choice doesn't matter?
@@ -217,3 +214,8 @@ Although we are far from answering the causal question, we've made some progress
 - asking data collectors for clarification
 - analyzing balance and overlap of covariates using propensity scores
 - testing for and remediating violations of other assumptions such as exchangeability, consistency or SUTVA
+
+## References
+
+[1] https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813732.pdf
+[2] https://web.archive.org/web/20200929163414/https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/statistics/dacota/bfs2018_motomoped.pdf. This report includes mopeds but motorcycles still make up a higher share of fatalities.
