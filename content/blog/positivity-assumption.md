@@ -39,7 +39,7 @@ Putting this all together, our question is, **"For Pakistanis, how much of a cau
 
 ## The Data
 For the data, I'll use a public dataset available on the Harvard Dataverse, which contains road traffic accident data from 2020-2023 in the city of Rawalpindi.
-*M Shujaat Abid. 2024. “Road Traffic Accident Dataset, Rawalpindi-Punjab, Pakistan.” Harvard Dataverse. https://doi.org/10.7910/DVN/4VGTDR.*
+*M Shujaat Abid. 2024. “Road Traffic Accident Dataset, Rawalpindi-Punjab, Pakistan.” Harvard Dataverse. (https://doi.org/10.7910/DVN/4VGTDR).*
 
 It's convenient that I've lived here because I already have prior beliefs about how data will be distributed and some ideas about the causal model. In other words, I arguably have some "domain knowledge".
 
