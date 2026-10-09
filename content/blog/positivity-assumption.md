@@ -112,11 +112,11 @@ First, we have some spring cleaning to do.
 
 Additionally, some columns are unnecessary for our analysis and should be removed:
 - `EcNumber`: It's unclear what this means but it's probably some sort of identifier. Interestingly, this number is not unique for each row. There are 3,782 `EcNumber` values that have been re-entered.
-        ```r
-        > prta |> count(EcNumber) |> filter(n > 1)
-        # A tibble: 3,792 × 2
-        # ...omitted for brevity
-        ```
+```r
+> prta |> count(EcNumber) |> filter(n > 1)
+# A tibble: 3,792 × 2
+# ...omitted for brevity
+```
 - `responsetime`: For this analysis, we don't care about what happened *after* the accident. Only what happened *before*. Response time doesn't help answer our original question.
 - `HospitalName`: Similar to `responsetime`
 - `TotalPatientsInEmergency`: This could have served as a proxy for the severity of the accident, but we already have `InjuryType` and `PatientStatus`
