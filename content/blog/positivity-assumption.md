@@ -35,7 +35,7 @@ Maybe socioeconomic status also affects how likely a fatal accident is supposed 
 
 Additionally, we also want to be clear about our causal model i.e. what causes what. Obviously the vehicle you're driving doesn't directly cause an accident just by driving it, but let's assume that it is a direct cause of an accident for simplicity.
 
-Putting this all together, our question is, **"For Pakistanis, how much of a causal effect does bike ownership have on accidents?"** As we'll see below, this question may have to change to accommodate limitations in the data.
+Putting this all together, our question is, **"For Pakistanis, how much of a causal effect does bike ownership have on fatal accidents?"** As we'll see below, this question may have to change to accommodate limitations in the data.
 
 ## The Data
 For the data, I'll use a public dataset available on the Harvard Dataverse, which contains road traffic accident data from 2020-2023 in the city of Rawalpindi.
