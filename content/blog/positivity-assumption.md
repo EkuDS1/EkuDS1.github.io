@@ -25,24 +25,24 @@ In this article, I'll be going through an example containing positivity assumpti
 ## Questions about the Question
 First, some context. When I say "bike", I'm referring to a motorcycle or a motorbike. Bikes are the default mode of transport for Pakistanis due to the them being relatively inexpensive to acquire. Bike riders are also known to be orders of magnitude more at risk of fatal accidents compared to car riders, based on traffic reports from the US[1] and European Union[2] showing that bikes constitute the highest percentage of fatal accidents.
 
-This is all very suggestive but what we want to know is: Do bikes *cause* more fatal accidents than cars? I’m biased to say yes. Can we substantiate the claim?
+This is all very suggestive but what we want to know is: Do bikes *cause* more fatal accidents than cars? I'm biased to say yes. Can we substantiate the claim?
 
 [1] https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813732.pdf
 [2] https://web.archive.org/web/20200929163414/https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/statistics/dacota/bfs2018_motomoped.pdf. This report includes mopeds but motorcycles still make up a higher share of fatalities.
 
 Let's be more concrete. I'm thinking of my home country Pakistan. So, maybe it would be appropriate to restrict the question to Pakistan only.
 
-We also don’t know if vehicle choice affects accidents at all. It's possible that road conditions are more to blame than any specific vehicle. How would we figure this out? If there are multiple causes of an accident, can we estimate the proportions of these causal effects i.e. how do we attribute “blame”? If the proportions are uniform, maybe that means that vehicle choice doesn’t matter?
+We also don't know if vehicle choice affects accidents at all. It's possible that road conditions are more to blame than any specific vehicle. How would we figure this out? If there are multiple causes of an accident, can we estimate the proportions of these causal effects i.e. how do we attribute "blame"? If the proportions are uniform, maybe that means that vehicle choice doesn't matter?
 
 Maybe socioeconomic status also affects how likely a fatal accident is supposed to occur, due to knowledge of traffic laws. Consider this: it's possible that being educated makes you more stressed and prone to collision. Therefore, uneducated people would be less likely to crash. We can use level of education as a proxy for this.
 
-Additionally, we also want to be clear about our causal model i.e. what causes what. Obviously the vehicle you’re driving doesn’t directly cause an accident just by driving it, but let’s assume that it is a direct cause of an accident for simplicity.
+Additionally, we also want to be clear about our causal model i.e. what causes what. Obviously the vehicle you're driving doesn't directly cause an accident just by driving it, but let's assume that it is a direct cause of an accident for simplicity.
 
-Putting this all together, our question is, **"For Pakistanis, how much of a causal effect does bike ownership have on accidents?"** As we’ll see below, this question may have to change to accommodate limitations in the data.
+Putting this all together, our question is, **"For Pakistanis, how much of a causal effect does bike ownership have on accidents?"** As we'll see below, this question may have to change to accommodate limitations in the data.
 
 ## The Data
 For the data, I'll use a public dataset available on the Harvard Dataverse, which contains road traffic accident data from 2020-2023 in the city of Rawalpindi.
-*M Shujaat Abid. 2024. “Road Traffic Accident Dataset, Rawalpindi-Punjab, Pakistan.” Harvard Dataverse. https://doi.org/10.7910/DVN/4VGTDR.*
+*M Shujaat Abid. 2024. "Road Traffic Accident Dataset, Rawalpindi-Punjab, Pakistan." Harvard Dataverse. https://doi.org/10.7910/DVN/4VGTDR.*
 
 It's convenient that I've lived here because I already have prior beliefs about how data will be distributed and some ideas about the causal model. In other words, I arguably have some "domain knowledge".
 
