@@ -218,4 +218,5 @@ Although we are far from answering the causal question, we've made some progress
 ## References
 
 [1] https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813732.pdf
+
 [2] https://web.archive.org/web/20200929163414/https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/statistics/dacota/bfs2018_motomoped.pdf. This report includes mopeds but motorcycles still make up a higher share of fatalities.
