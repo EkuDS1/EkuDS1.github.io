@@ -147,9 +147,10 @@ Still, there is one glaring issue. The dataset records data for a single patient
 The positivity assumption states that for all covariate values $x$ where $P(X=x) > 0$, $0 < P(T=t|X=x) < 1$ for all treatments $t$. This assumption may be violated because there are subpopulations where bikes were never involved. For example, $P(RickshawsInvolved > 1) > 0$ but $P(T=1 | RickshawsInvolved > 1) = 0$ where $T$ is `BikesInvolved` being greater than 0:
 
 ```r
-> rta |> filter(RickshawsInvolved > 1 & BikesInvolved > 0) |> select(BikesInvolved)
-# A tibble: 0 × 1
-# ℹ 1 variable: BikesInvolved <dbl>
+> rta |> filter(RickshawsInvolved > 1)
+# A tibble: 93 × 25
+> rta |> filter(RickshawsInvolved > 1 & BikesInvolved > 0)
+# A tibble: 0 × 25
 ```
 
 ### `Involved` columns
