@@ -147,7 +147,7 @@ Second, the dataset records data for a single patient per row. *We don't know wh
 
 We can get around both by changing the question: "**For Pakistanis, given a crash, how much of a causal effect does *bike involvement* have on fatal accidents as opposed to non-fatal ones?**" Here fatal means `PatientStatus` is `Dead`.
 
-Whether or not it's okay to change the question is context-dependent. For our purposes, a reasonable motivation to change it would be to consider a question like,"If you had to crash, would you rather be on a bike or in a car?"
+Whether or not it's okay to change the question is context-dependent. For our purposes, a reasonable motivation to change it would be to consider a question like, "If you had to crash, would you rather be on a bike or in a car?"
 
 ## The Positivity Assumption
 
