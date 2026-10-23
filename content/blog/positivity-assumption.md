@@ -214,7 +214,7 @@ $ Age              <fct> "(25,59]", "(0,25]", "(25,59]", "(25,59]", "(0,25]…
 Although we are far from answering the causal question, we've made some progress and the above discussion should make it clear that satisfying the positivity assumption is non-trivial. At this point, one could take a few different steps such as:
 - asking data collectors for clarification
 - analyzing balance and overlap of covariates using propensity scores
-- testing for and remediating violations of other assumptions such as exchangeability, consistency or SUTVA
+- considering violations of other assumptions such as exchangeability, consistency or SUTVA
 
 ## References
 
