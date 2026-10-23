@@ -23,7 +23,7 @@ Claims about cause and effect cannot be made without certain assumptions. For an
 
 In this article, I'll be going through an example containing positivity assumption violations and how trying to fix them can lead to tradeoffs. First, we'll go over the causal question and data cleanup. Then we'll address our causal assumption.
 ## Questions about the Question
-First, some context. When I say "bike", I'm referring to a motorcycle or a motorbike. Bikes are the default mode of transport for Pakistanis due to the them being relatively inexpensive to acquire. Bike riders are also known to be orders of magnitude more at risk of fatal accidents compared to car riders, based on traffic reports from the US[1] and European Union[2] showing that bikes constitute the highest percentage of fatal accidents.
+First, some context. When I say "bike", I'm referring to a motorcycle or a motorbike. Bikes are the default mode of transport for Pakistanis due to them being relatively inexpensive to acquire. Bike riders are also known to be orders of magnitude more at risk of fatal accidents compared to car riders, based on traffic reports from the US[1] and European Union[2] showing that bikes constitute the highest percentage of fatal accidents.
 
 This is all very suggestive but what we want to know is: Do bikes *cause* more fatal accidents than cars? I'm biased to say yes. Can we substantiate the claim?
 
@@ -45,7 +45,7 @@ It's convenient that I've lived here because I already have prior beliefs about 
 
 ## Exploratory Data Analysis
 
-First, we load our packages and read from the a file. Note: For brevity, I'll be omitting some messages that appear when running the R code.
+First, we load our packages and read from the file. Note: For brevity, I'll be omitting some messages that appear when running the R code.
 ```r
 > library(tidyverse)
 > library(readxl)
